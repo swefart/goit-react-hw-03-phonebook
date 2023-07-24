@@ -20,15 +20,11 @@ class App extends Component {
     } else this.setState({contacts: []})
    }
 
-
   componentDidUpdate(prevProps, prevState) {
     if (prevState.contacts.length !== this.state.contacts.length) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
     }
   }
-
-
-  
 
   addContact = (name, number) => {
     if (this.state.contacts.find(el => el.name === name)) {
@@ -71,7 +67,6 @@ class App extends Component {
         </Container>
     )
   }
-
 }
 
 export default App
